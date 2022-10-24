@@ -2,6 +2,7 @@
 #include <stdbool.h>
 
 bool isMagic(int square[3][3]);
+void printArray(int square[3][3]);
 //create main function for Lo Shu Magic Square
 int main() {
     int square[3][3] = {
@@ -11,8 +12,10 @@ int main() {
     };
     if(isMagic(square)) {
         printf("This is magical");
+        printArray(square);
     } else {
         printf("I'm not feeling the magic");
+        printArray(square);
     }
 }
 //create array shuffler function (It will be assumed that an 3x3 with values 1-9 will be created in main beforehand)
@@ -35,5 +38,15 @@ bool isMagic(int square[3][3]) {
         }
     //otherwise it is a magic square.
     return true;
+}
+
+//create print array function
+void printArray(int square[3][3]) {
+    for(int row = 0; row < 3; row++) {
+        printf("\n");
+        for(int col = 0; col < 3; col++) {
+            printf("%d ", square[row][col]);
+        }
+    }
 }
 //create swap function for array shuffle function.
